@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>পণ্য সম্পাদনা | অ্যাডম প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-header">📦 অ্যাডম প্যানেল</div>
+      <nav class="sidebar-menu">
+        <a href="admin.html">📊 ড্যাশবোর্ড</a>
+        <a href="admin-orders.html">📋 অর্ডার তালিকা</a>
+        <a href="admin-create-order.html">➕ অর্ডার তৈরি</a>
+        <a href="admin-products.html">🛍️ পণ্য তালিকা</a>
+        <a href="admin-courier.html">🚚 কুরিয়ার র্যাশিও</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="btn btn-danger btn-sm" style="width:100%;">লগআউট</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <button class="menu-toggle">☰</button>
+      <header class="topbar">
+        <div class="page-title" id="page-title">🛍️ পণ্য যোগ করুন</div>
+        <a href="admin-products.html" class="btn btn-outline">⟵ তালিকায় ফিরে যান</a>
+      </header>
+
+      <div class="form-card">
+        <form id="product-form">
+          <div class="form-group">
+            <label>পণ্যের নাম <span class="req">*</span></label>
+            <input type="text" name="name" placeholder="যেমন: প্রিমিয়াম টি-শার্ট" required>
+          </div>
+          <div class="form-group">
+            <label>দাম (টাকা) <span class="req">*</span></label>
+            <input type="number" name="price" placeholder="১৯৯৯" required>
+          </div>
+          <div class="form-group">
+            <label>বিবরণ</label>
+            <textarea name="description" rows="3" placeholder="পণ্যের সংক্ষিপ্ত বিবরণ লিখুন"></textarea>
+          </div>
+          <div class="form-group">
+            <label>স্টক পরিমাণ</label>
+            <input type="number" name="stock" placeholder="০" value="0">
+          </div>
+          <div class="form-group">
+            <label>চিত্রের URL</label>
+            <input type="url" name="image" placeholder="https://example.com/image.jpg">
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">পণ্য সেভ করুন</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কুরিয়ার র্যাশিও | অ্যাডম প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-header">📦 অ্যাডম প্যানেল</div>
+      <nav class="sidebar-menu">
+        <a href="admin.html">📊 ড্যাশবোর্ড</a>
+        <a href="admin-orders.html">📋 অর্ডার তালিকা</a>
+        <a href="admin-create-order.html">➕ অর্ডার তৈরি</a>
+        <a href="admin-products.html">🛍️ পণ্য তালিকা</a>
+        <a href="admin-courier.html" class="active">🚚 কুরিয়ার র্যাশিও</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="btn btn-danger btn-sm" style="width:100%;">লগআউট</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <button class="menu-toggle">☰</button>
+      <header class="topbar">
+        <div class="page-title">🚚 কুরিয়ার ডেলিভারি র্যাশিও</div>
+        <a href="admin-orders.html" class="btn btn-outline">সব অর্ডার দেখুন</a>
+      </header>
+
+      <div class="ratio-grid">
+        <div class="ratio-card">
+          <div class="label">মোট অর্ডার</div>
+          <div class="value" id="courier-total">0</div>
+        </div>
+        <div class="ratio-card">
+          <div class="label">ডেলিভার্ড</div>
+          <div class="value" id="courier-delivered">0</div>
+        </div>
+        <div class="ratio-card">
+          <div class="label">প্যান্ডিং</div>
+          <div class="value" id="courier-pending">0</div>
+        </div>
+        <div class="ratio-card">
+          <div class="label">শিপ করা হয়েছে</div>
+          <div class="value" id="courier-shipped">0</div>
+        </div>
+        <div class="ratio-card">
+          <div class="label">রিটার্ন</div>
+          <div class="value" id="courier-returned">0</div>
+        </div>
+        <div class="ratio-card">
+          <div class="label">বাতিল</div>
+          <div class="value" id="courier-cancelled">0</div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:2rem;">
+        <h2 style="font-size:1.25rem; font-weight:800;">কুরিয়ার সাফল্যের হার</h2>
+      </div>
+      <div class="ratio-card">
+        <div class="label">ডেলিভারি সাকসেস র্যাশিও</div>
+        <div class="value" id="courier-ratio">0%</div>
+        <div class="progress-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="ratio-fill"></div></div>
+        </div>
+        <div class="sub">সম্পূর্ণ অর্ডারের মধ্যে কতটা সফলভাবে ডেলিভার্ড হয়েছে</div>
+      </div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

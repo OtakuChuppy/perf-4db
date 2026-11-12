@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ড্যাশবোর্ড | অ্যাডম প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-header">📦 অ্যাডম প্যানেল</div>
+      <nav class="sidebar-menu">
+        <a href="admin.html" class="active">📊 ড্যাশবোর্ড</a>
+        <a href="admin-orders.html">📋 অর্ডার তালিকা</a>
+        <a href="admin-create-order.html">➕ অর্ডার তৈরি</a>
+        <a href="admin-products.html">🛍️ পণ্য তালিকা</a>
+        <a href="admin-courier.html">🚚 কুরিয়ার র্যাশিও</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="btn btn-danger btn-sm" style="width:100%;">লগআউট</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <button class="menu-toggle" style="display:none;">☰</button>
+      <header class="topbar">
+        <div class="page-title">📊 ড্যাশবোর্ড</div>
+        <div class="user-badge">👤 অ্যাডমিন</div>
+      </header>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon orders">🛍️</div>
+          <div class="stat-content">
+            <h3>মোট পণ্য</h3>
+            <div class="big" id="stat-products">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon orders">📋</div>
+          <div class="stat-content">
+            <h3>মোট অর্ডার</h3>
+            <div class="big" id="stat-orders">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon revenue">💵</div>
+          <div class="stat-content">
+            <h3>মোট রাজস্ব</h3>
+            <div class="big" id="stat-revenue">0 টাকা</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon courier">🚚</div>
+          <div class="stat-content">
+            <h3>কুরিয়ার সাফল্য</h3>
+            <div class="big" id="stat-courier">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h2 style="font-size:1.25rem; font-weight:800;">সর্বশেষ অর্ডার</h2>
+        <a href="admin-orders.html" class="btn btn-outline btn-sm">সব অর্ডার দেখুন</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>অর্ডার #</th>
+              <th>গ্রাহকের নাম</th>
+              <th>ফোন</th>
+              <th>মোট টাকা</th>
+              <th>অবস্থা</th>
+            </tr>
+          </thead>
+          <tbody id="recent-orders-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার তৈরি | অ্যাডম প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-header">📦 অ্যাডম প্যানেল</div>
+      <nav class="sidebar-menu">
+        <a href="admin.html">📊 ড্যাশবোর্ড</a>
+        <a href="admin-orders.html">📋 অর্ডার তালিকা</a>
+        <a href="admin-create-order.html" class="active">➕ অর্ডার তৈরি</a>
+        <a href="admin-products.html">🛍️ পণ্য তালিকা</a>
+        <a href="admin-courier.html">🚚 কুরিয়ার র্যাশিও</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="btn btn-danger btn-sm" style="width:100%;">লগআউট</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <button class="menu-toggle">☰</button>
+      <header class="topbar">
+        <div class="page-title">➕ নতুন অর্ডার তৈরি</div>
+        <a href="admin-orders.html" class="btn btn-outline">⟵ তালিকায় ফিরে যান</a>
+      </header>
+
+      <div class="form-card">
+        <div id="rate-msg" style="margin-bottom:1rem; font-weight:600; font-size:0.95rem;"></div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+          আইপি: <span id="ip-display" style="font-family:monospace;">চেক হচ্ছে...</span>
+          <span style="margin-left:0.5rem; font-size:0.8rem;">(২৪ ঘণ্টায় এক আইপি থেকে একবার অর্ডার)</span>
+        </div>
+
+        <form id="create-order-form">
+          <div class="form-group">
+            <label>গ্রাহকের নাম <span class="req">*</span></label>
+            <input type="text" name="name" placeholder="যেমন: রহিম উদ্দিন" required>
+          </div>
+          <div class="form-group">
+            <label>ফোন নম্বর <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="০১৭১২৩৪৫৬৭৮" required>
+          </div>
+          <div class="form-group">
+            <label>ইমেইল</label>
+            <input type="email" name="email" placeholder="নাম@example.com">
+          </div>
+          <div class="form-group">
+            <label>ঠিকানা <span class="req">*</span></label>
+            <textarea name="address" rows="3" required placeholder="ঘর/ফ্ল্যাট, রাস্তা, এলাকা, জেলা"></textarea>
+          </div>
+          <div class="form-group">
+            <label>পোস্টকোড</label>
+            <input type="text" name="postcode" placeholder="১২১৫">
+          </div>
+          <div class="form-group">
+            <label>পরিমাণ <span class="req">*</span></label>
+            <select name="quantity" required>
+              <option value="1">১টি</option>
+              <option value="2">২টি</option>
+              <option value="5">৫টি</option>
+              <option value="10">১০টি</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>মোট টাকা (ক্যাশ অন ডেলিভারি) <span class="req">*</span></label>
+            <input type="number" name="totalAmount" placeholder="১৯৯৯" required>
+          </div>
+          <div class="form-group">
+            <label>অবস্থা</label>
+            <select name="status">
+              <option value="pending">প্যান্ডিং</option>
+              <option value="processing">প্রসেসিং</option>
+              <option value="shipped">শিপ করা হয়েছে</option>
+              <option value="delivered">ডেলিভার্ড</option>
+            </select>
+          </div>
+          <button type="submit" id="submit-order" class="btn btn-primary btn-full">অর্ডার তৈরি করুন</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

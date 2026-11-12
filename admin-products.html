@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>পণ্য তালিকা | অ্যাডম প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-header">📦 অ্যাডম প্যানেল</div>
+      <nav class="sidebar-menu">
+        <a href="admin.html">📊 ড্যাশবোর্ড</a>
+        <a href="admin-orders.html">📋 অর্ডার তালিকা</a>
+        <a href="admin-create-order.html">➕ অর্ডার তৈরি</a>
+        <a href="admin-products.html" class="active">🛍️ পণ্য তালিকা</a>
+        <a href="admin-courier.html">🚚 কুরিয়ার র্যাশিও</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="btn btn-danger btn-sm" style="width:100%;">লগআউট</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <button class="menu-toggle">☰</button>
+      <header class="topbar">
+        <div class="page-title" id="page-title">🛍️ পণ্য তালিকা</div>
+        <a href="admin-product-edit.html" class="btn btn-primary">➕ নতুন পণ্য যোগ করুন</a>
+      </header>
+
+      <div class="product-list" id="products-container"></div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

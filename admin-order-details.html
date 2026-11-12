@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার বিবরণ | অ্যাডম প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-header">📦 অ্যাডম প্যানেল</div>
+      <nav class="sidebar-menu">
+        <a href="admin.html">📊 ড্যাশবোর্ড</a>
+        <a href="admin-orders.html">📋 অর্ডার তালিকা</a>
+        <a href="admin-create-order.html">➕ অর্ডার তৈরি</a>
+        <a href="admin-products.html">🛍️ পণ্য তালিকা</a>
+        <a href="admin-courier.html">🚚 কুরিয়ার র্যাশিও</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="btn-logout" class="btn btn-danger btn-sm" style="width:100%;">লগআউট</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <button class="menu-toggle">☰</button>
+      <header class="topbar">
+        <div class="page-title">🧾 অর্ডার বিবরণ</div>
+        <a href="admin-orders.html" class="btn btn-outline">← তালিকায় ফিরে যান</a>
+      </header>
+
+      <div class="form-card" style="max-width:640px;">
+        <div class="detail-row"><span class="key">অর্ডার নম্বর</span><span id="order-id">#—</span></div>
+        <div class="detail-row"><span class="key">গ্রাহকের নাম</span><span id="order-name">—</span></div>
+        <div class="detail-row"><span class="key">ফোন নম্বর</span><span id="order-phone">—</span></div>
+        <div class="detail-row"><span class="key">ইমেইল</span><span id="order-email">—</span></div>
+        <div class="detail-row"><span class="key">ঠিকানা</span><span id="order-address">—</span></div>
+        <div class="detail-row"><span class="key">পোস্টকোড</span><span id="order-postcode">—</span></div>
+        <div class="detail-row"><span class="key">পরিমাণ</span><span id="order-quantity">0</span></div>
+        <div class="detail-row"><span class="key">মোট টাকা</span><span id="order-total">0 টাকা</span></div>
+        <div class="detail-row"><span class="key">অবস্থা</span><span id="order-status" class="badge pending">প্যান্ডিং</span></div>
+        <div class="detail-row"><span class="key">তারিখ</span><span id="order-date">—</span></div>
+      </div>
+
+      <div style="margin-top:1rem; display:flex; gap:0.75rem;">
+        <select id="detail-status" style="padding:0.65rem 1rem;border-radius:var(--radius);border:1px solid var(--border);font-size:0.95rem;">
+          <option value="pending">প্যান্ডিং</option>
+          <option value="processing">প্রসেসিং</option>
+          <option value="shipped">শিপ করা হয়েছে</option>
+          <option value="delivered">ডেলিভার্ড</option>
+          <option value="returned">রিটার্ন</option>
+          <option value="cancelled">বাতিল</option>
+        </select>
+        <button id="btn-delete-order" class="btn btn-danger btn-sm">অর্ডার মুছুন</button>
+      </div>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

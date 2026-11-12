@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অ্যাডম লগিন | পণ্য প্যানেল</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-app" style="flex-direction:column; align-items:center; justify-content:center; min-height:100vh; margin:0;">
+  <div style="max-width:400px; width:100%; padding:2rem;">
+    <div style="text-align:center; margin-bottom:2rem;">
+      <div style="font-size:2rem; margin-bottom:0.5rem;">📦</div>
+      <h2 style="color:var(--primary); font-weight:800;">অ্যাডম প্যানেল লগিন</h2>
+      <p style="color:var(--text-muted);">প্রায় stratégically অ্যাক্সেস করুন</p>
+    </div>
+    <div class="form-card" style="margin:0 auto;">
+      <form id="login-form">
+        <div class="form-group">
+          <label>পাসওয়ার্ড <span class="req">*</span></label>
+          <input type="password" id="admin-pass" placeholder="পাসওয়ার্ড লিখুন" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" style="width:100%;">প্রবেশ করুন</button>
+      </form>
+      <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted); text-align:center;">
+        ডিফল্ট পাসওয়ার্ড: <code>admin123</code> (প্রোডাকশনে পরিবর্তন করুন)
+      </p>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (document.getElementById('admin-pass').value === 'admin123') {
+        AdminAuth.login();
+        location.href = 'admin.html';
+      } else {
+        alert('পাসওয়ার্ড সঠিক নয়।');
+      }
+    });
+  </script>
+</body>
+</html>
